@@ -1,0 +1,127 @@
+@keyframes clock {
+  0% { 
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#clockWrapper {
+  width: 600px;
+  height: 200px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  height: 100%;
+  width: 20px;
+  position: relative;
+  animation: clock 0.5s infinite;
+  animation-direction: alternate;
+}
+
+.divider::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: red;
+}
+
+.divider::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: red;
+}
+
+.digit {
+  position: relative;
+  height: 180px;
+  width: 80px;
+  margin: 0 8px;
+  box-sizing: border-box;
+}
+
+.digit .top {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+}
+
+.digit .top-left {
+  position: absolute;
+  width: 8px;
+  height: 45%;
+  margin-top: 12px;
+}
+
+.digit .top-right {
+  position: absolute;
+  width: 8px;
+  height: 45%;
+  margin-top: 12px;
+  right: 0;
+}
+
+.digit .middle {
+  position: absolute;
+  height: 8px;
+  width: 65%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 85px;
+}
+
+.digit .bottom-left {
+  position: absolute;
+  width: 8px;
+  height: 38%;
+  margin-bottom: 12px;
+  left: 0;
+  bottom: 0;
+}
+
+.digit .bottom-right {
+  position: absolute;
+  width: 8px;
+  height: 38%;
+  margin-bottom: 12px;
+  right: 0;
+  bottom: 0;
+}
+
+.digit .bottom {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  bottom: 0;
+}
+
+.number-off {
+  background-color: rgb(30, 0, 0);
+}
+
+.number-on {
+  background-color: red;
+}
+
