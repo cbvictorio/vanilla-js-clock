@@ -163,26 +163,26 @@ function clockTicking() {
       seconds = 0;
     }
 
-    const secondsFirstDigit = parseInt(
+    const secondsFirstDigit = seconds.toString().split('').length === 1 ?
+      0 :
+      parseInt(seconds.toString().split('')[0])
+    
+    const secondsSecondDigit = parseInt(
       seconds.toString().split('')[1] || seconds.toString().split('')[0]
     );
 
-    const secondsSecondDigit = seconds.toString().split('').length === 1 ?
-      0 :
-      parseInt(seconds.toString().split('')[0])
-
-    const minutesFirstDigit = parseInt(
+    const minutesFirstDigit = minutes.toString().split('').length === 1 ?
+    0 :
+    parseInt(minutes.toString().split('')[0])
+    
+    const minutesSecondDigit = parseInt(
       minutes.toString().split('')[1] || minutes.toString().split('')[0]
     );
 
-    const minutesSecondDigit = minutes.toString().split('').length === 1 ?
-      0 :
-      parseInt(minutes.toString().split('')[0])
-
-    paintDigit('minuteSecondDigit', secondsFirstDigit);
-    paintDigit('minuteFirstDigit', secondsSecondDigit);
-    paintDigit('hourFirstDigit', minutesSecondDigit);
-    paintDigit('hourSecondDigit', minutesFirstDigit);
+    paintDigit('minuteFirstDigit', secondsFirstDigit);
+    paintDigit('minuteSecondDigit', secondsSecondDigit);
+    paintDigit('hourFirstDigit', minutesFirstDigit);
+    paintDigit('hourSecondDigit', minutesSecondDigit);
     
     seconds++;
   }, 1000)
